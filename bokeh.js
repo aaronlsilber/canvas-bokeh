@@ -17,7 +17,7 @@ canvas.height = window.innerHeight;
 
 var settings = {
     'basic': {
-        'emission_rate': 2,
+        'emission_rate': 4,
         'min_life': 5,
         'life_range': 1,
         'min_angle': 0,
@@ -26,7 +26,8 @@ var settings = {
         'speed_range': 15,
         'min_size': 30,
         'size_range': 100,
-        'color': '240,231,48'
+        'color': '151,242,201'
+        //'color': '127,239,189'
     }
 };
 
@@ -178,14 +179,14 @@ var emitter = new Emitter(canvas.width/2, canvas.height/2, settings.basic);
 function loop() {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.globalCompositeOperation = "multiply";
+    ctx.globalCompositeOperation = "lighten";
     ctx.rect(0, 0, canvas.width, canvas.height);
     //ctx.fillStyle = '#C9D33E';
     
     // createRadialGradient(x0, y0, r0, x1, y1, r1);
     var gradient = ctx.createRadialGradient(0,0,0,0,0,canvas.width);
-    gradient.addColorStop(0,"#F78F0F");
-    gradient.addColorStop(1,"#C9D33E");
+    gradient.addColorStop(0,"rgb(127,239,189)");
+    gradient.addColorStop(1,"rgb(127,239,189)");
     ctx.fillStyle = gradient;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
